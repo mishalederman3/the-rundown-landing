@@ -226,6 +226,18 @@
     .signup-form-wrap {
       max-width: 440px;
       margin: 0 auto;
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    /* Force the beehiiv embed (iframe injected by their script) to fill
+       and center within the wrap, instead of left-aligning at its default width */
+    .signup-form-wrap iframe {
+      width: 100% !important;
+      margin: 0 auto;
     }
     .signup-fields {
       display: flex;
@@ -1617,68 +1629,11 @@
       darties, weekly staples, and the events worth knowing for the next two weeks.
     </p>
 
-    <!-- SIGNUP_FORM_INTEGRATION -->
-    <!--
-      BEEHIIV EMBED (replace custom form below when ready to launch):
-      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="ab64bd5a-f123-4d16-8f42-73befc20ad18"></script>
-    -->
+    <!-- BEEHIIV EMBED -->
     <div id="signup-hero" class="signup-form-wrap fade-up stagger-3" aria-label="Newsletter signup">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="8ecb9ca0-3945-4151-8d37-f45b2fdc740c"></script>
 
-      <div class="form-success" id="success-hero" role="status" aria-live="polite">
-        <div class="form-success-icon">🎉</div>
-        <div class="form-success-text">You're on the list.<br>First drop coming soon.</div>
-      </div>
-
-      <div class="signup-fields" id="fields-hero">
-        <input
-          type="email"
-          class="input-email"
-          id="email-hero"
-          placeholder="Your Western email"
-          autocomplete="email"
-          inputmode="email"
-          aria-label="Email address"
-          required
-        >
-        <div class="name-field">
-          <label class="name-label" for="name-hero">First name (optional)</label>
-          <input
-            type="text"
-            class="input-name"
-            id="name-hero"
-            placeholder="e.g. Alex"
-            autocomplete="given-name"
-            aria-label="First name, optional"
-          >
-        </div>
-        <button class="btn-submit" type="button" onclick="submitForm('hero')" aria-label="Join The Rundown newsletter">
-          Join The Rundown
-        </button>
-      </div>
-
-      <p class="trust-line">Free. Built for Western students. No spam. Just the moves.</p>
-
-      <!-- Social proof pill -->
-      <div class="social-proof-wrap">
-        <div class="sp-pill" aria-label="247 Western students already on the early list">
-          <div class="sp-shimmer"></div>
-          <div class="sp-avatars" aria-hidden="true">
-            <div class="sp-av sp-av-1">A</div>
-            <div class="sp-av sp-av-2">J</div>
-            <div class="sp-av sp-av-3">M</div>
-            <div class="sp-av sp-av-4">S</div>
-            <div class="sp-av sp-av-5">+243</div>
-          </div>
-          <div class="sp-text-wrap">
-            <span class="sp-count" id="sp-counter" aria-live="polite">247</span>
-            <span class="sp-label">Western students on the early list</span>
-          </div>
-          <div class="sp-live" aria-hidden="true">
-            <div class="sp-dot"></div>
-            <span class="sp-live-text">Live</span>
-          </div>
-        </div>
-      </div>
+      <p class="trust-line" style="margin-top: 24px;">Free. Built for Western students. No spam. Just the moves.</p>
 
       <!-- EVENT_SUBMISSION_LINK -->
       <a href="https://airtable.com/appX7QOQLIz732xO6/pag7WxxqUY7lLryAb/form"
@@ -1687,9 +1642,8 @@
          rel="noopener">
         Hosting an event? Submit it →
       </a>
-
     </div>
-    <!-- /SIGNUP_FORM_INTEGRATION -->
+    <!-- /BEEHIIV_EMBED -->
 
   </div>
 </section>
